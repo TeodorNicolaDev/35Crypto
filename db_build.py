@@ -26,6 +26,7 @@ db   = gw.DbConnections()
 tableCreation = {
                 'ORDER_BOOK_TRACKING' : {'fields'        : {'PAIR'      : 'VARCHAR(8)' ,
                                                             'DIRECTION' : 'VARCHAR(4)' ,
+                                                            'DEPTH'     : 'INTEGER'    ,
                                                             'PRICE'     : 'VARCHAR(12)',
                                                             'VOLUME'    : 'VARCHAR(12)',
                                                             'UPDT_DTTM' : 'TIMESTAMP'},

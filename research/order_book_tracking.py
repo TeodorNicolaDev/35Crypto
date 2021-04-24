@@ -76,7 +76,7 @@ if __name__ == "__main__":
 
             orders = orderBook[pair][direction]
 
-            for entry in orders:
+            for ix, entry in enumerate(orders):
 
                 price  = entry[0]
                 volume = entry[1]
@@ -85,6 +85,7 @@ if __name__ == "__main__":
                           'ORDER_BOOK_TRACKING',
                           {'PAIR'      : pair,
                            'DIRECTION' : direction ,
+                           'DEPTH'     : ix,
                            'PRICE'     : price,
                            'VOLUME'    : volume})
 
