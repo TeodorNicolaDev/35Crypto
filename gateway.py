@@ -137,9 +137,8 @@ class DbConnections(object):
 
         self.gate    = Gateway()
 
-        self.connect = {'TRADE_PROD'   : None, # DB : SERVER
-                        'TRADING_PROD' : None,
-                        'SERVER_TEST'  : None} # DB : LOCAL DESKTOP
+        self.connect = {'TRADE_PROD'        : None, # DB : SERVER
+                        'TRADING_PROD'      : None} # DB : LOCAL DESKTOP
 
         self.fetchDBDetails()
 
