@@ -1,0 +1,48 @@
+{
+    "acctMsgTypeMap": {
+        "description": "mapping of endpoints to public/private API",
+        "type": "dict"
+    },
+    "balance": {
+        "description": "current account balance at a currency level",
+        "type": "dict"
+    },
+    "connect": {
+        "description": "dictionary that maps database names to connection objects"
+    },
+    "gate": {
+        "description": "connection object used to excute modified import and export calls"
+    },
+    "hostName": {
+        "description": "Coin Metrics API application address (hostname)"
+    },
+    "k": {
+        "description": "Kraken API connection object",
+        "type": "krakenex.api.API"
+    },
+    "lastReturn": {
+        "description": "last executed trade according to Kraken",
+        "type": "dict"
+    },
+    "launchDatatime": {
+        "description": "time at instantiation of the object"
+    },
+    "metrics": {
+        "description": "endpoint for sourcing asset metrics"
+    },
+    "metricsFields": {
+        "description": "endpoint for sourcing asset metric catalog"
+    },
+    "tradablePairs": {
+        "description": "all tradable pairs and tradability parameters",
+        "type": "dict"
+    },
+    "tradeBalance": {
+        "description": "current account measures",
+        "type": "dict"
+    },
+    "tradeHistory": {
+        "description": "log of historically executed transactions",
+        "type": "pandas.core.frame.DataFrame"
+    }
+}

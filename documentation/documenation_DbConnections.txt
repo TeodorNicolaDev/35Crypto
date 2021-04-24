@@ -1,0 +1,34 @@
+    ###########################################################################
+
+    DbConnections Class Documentation
+    ----------
+
+
+    ... 
+
+    Attributes 
+    ----------
+
+        connect (dict)
+            dictionary that maps database names to connection objects 
+
+        gate (gateway.Gateway)
+            connection object used to excute modified import and export calls 
+
+    Methods 
+    ---------- 
+
+        checkTableExists(table_name, connection)
+            ping database to validate if table exists in the defined schema (connection) 
+
+        createTable(database_name, table_name, column_dict, override)
+            execute sql to generate table (table_name) in database (datebase_name) with the specifications defined (column_dict) 
+
+        fetchDBDetails()
+            source database connection details from system variable 
+
+        insert(database_name, table_name, entry)
+            execute sql to insert input entry records to target table 
+
+
+    ###########################################################################

@@ -1,0 +1,67 @@
+    ###########################################################################
+
+    KrakenAPI Class Documenation 
+    ----------
+
+
+    ... 
+
+    Attributes 
+    ----------
+
+        acctMsgTypeMap (dict)
+            mapping of endpoints to public/private API 
+
+        balance (dict)
+            current account balance at a currency level 
+
+        lastReturn (dict)
+            last executed trade according to Kraken 
+
+        tradablePairs (dict)
+            all tradable pairs and tradability parameters 
+
+        tradeBalance (dict)
+            current account measures 
+
+        tradeHistory (pandas.core.frame.DataFrame)
+            log of historically executed transactions 
+
+    Methods 
+    ---------- 
+
+        calcDateFromTimestamp(timestamp)
+            converts string timestamp to %Y-%m-%d formatted string date 
+
+        fillOrder(row)
+            helper method used to calculate how an order would be filled across the top of the order book versus multiple price levels 
+
+        getBalance()
+            source current account balance at a currency level 
+
+        getBestPrice(pair, direction, quantity)
+            calculate the estimated market order price based on the best available trade in the order book *accounts for Kraken transaction cost* 
+
+        getOrderBook(pair, depth)
+            source current order book for a given currency pair 
+
+        getTradablePairs()
+            source all tradable pairs and tradability parameters 
+
+        getTradeBalance()
+            source current account measures, this includes but is not limited to total trade balance, free margin, float valuation, etc. 
+
+        getTradeHistory()
+            source log of historically executed transactions 
+
+        loanAPIKey()
+            load Kraken API key from environment variables 
+
+        placeOrder(orderDetails)
+            send specified order details to execute a trade in Kraken (method validates specific trade specifications) 
+
+        trigger(command, payload)
+            generalized method for executing Kraken API commands 
+
+
+    ###########################################################################

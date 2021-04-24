@@ -1,0 +1,74 @@
+{
+    "calcDateFromTimestamp": {
+        "description": "converts string timestamp to %Y-%m-%d formatted string date",
+        "type": "method"
+    },
+    "checkTableExists": {
+        "description": "ping database to validate if table exists in the defined schema (connection)",
+        "type": "method"
+    },
+    "createTable": {
+        "description": "execute sql to generate table (table_name) in database (datebase_name) with the specifications defined (column_dict)",
+        "type": "method"
+    },
+    "fetchDBDetails": {
+        "description": "source database connection details from system variable",
+        "type": "method"
+    },
+    "fetchMetrics": {
+        "description": "execute request to metric fields endpoint",
+        "type": "method"
+    },
+    "fetchMetricsDetail": {
+        "description": "source metrics for given metric (field) with defined specifications",
+        "type": "method"
+    },
+    "fillOrder": {
+        "description": "helper method used to calculate how an order would be filled across the top of the order book versus multiple price levels",
+        "type": "method"
+    },
+    "getBalance": {
+        "description": "source current account balance at a currency level",
+        "type": "method"
+    },
+    "getBestPrice": {
+        "description": "calculate the estimated market order price based on the best available trade in the order book *accounts for Kraken transaction cost*",
+        "type": "method"
+    },
+    "getOrderBook": {
+        "description": "source current order book for a given currency pair",
+        "type": "method"
+    },
+    "getTradablePairs": {
+        "description": "source all tradable pairs and tradability parameters",
+        "type": "method"
+    },
+    "getTradeBalance": {
+        "description": "source current account measures, this includes but is not limited to total trade balance, free margin, float valuation, etc.",
+        "type": "method"
+    },
+    "getTradeHistory": {
+        "description": "source log of historically executed transactions",
+        "type": "method"
+    },
+    "insert": {
+        "description": "execute sql to insert input entry records to target table",
+        "type": "method"
+    },
+    "loanAPIKey": {
+        "description": "load Kraken API key from environment variables",
+        "type": "method"
+    },
+    "placeOrder": {
+        "description": "send specified order details to execute a trade in Kraken (method validates specific trade specifications)",
+        "type": "method"
+    },
+    "read_sql": {
+        "description": "execute and return dateframe from the request of the sql query (sql_code)",
+        "type": "method"
+    },
+    "trigger": {
+        "description": "generalized method for executing Kraken API commands",
+        "type": "method"
+    }
+}

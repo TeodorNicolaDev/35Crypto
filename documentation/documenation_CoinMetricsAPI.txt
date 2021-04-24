@@ -1,0 +1,34 @@
+    ###########################################################################
+
+    CoinMetricsAPI Class Documentation
+    ----------
+
+
+    ... 
+
+    Attributes 
+    ----------
+
+        hostName (str)
+            Coin Metrics API application address (hostname) 
+
+        metrics (str)
+            endpoint for sourcing asset metrics 
+
+        metricsFields (str)
+            endpoint for sourcing asset metric catalog 
+
+    Methods 
+    ---------- 
+
+        calcDateFromTimestamp(timestamp)
+            converts string timestamp to %Y-%m-%d formatted string date 
+
+        fetchMetrics(coin, start, end, field, freq)
+            execute request to metric fields endpoint 
+
+        fetchMetricsDetail(coin)
+            source metrics for given metric (field) with defined specifications 
+
+
+    ###########################################################################

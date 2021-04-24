@@ -1,0 +1,22 @@
+    ###########################################################################
+
+    Gateway Class Documentation
+    ----------
+
+
+    ... 
+
+    Attributes 
+    ----------
+
+        launchDatatime (datetime.datetime)
+            time at instantiation of the object 
+
+    Methods 
+    ---------- 
+
+        read_sql(sql_code, connection)
+            execute and return dateframe from the request of the sql query (sql_code) 
+
+
+    ###########################################################################
