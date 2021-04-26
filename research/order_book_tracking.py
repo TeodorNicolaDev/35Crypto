@@ -45,51 +45,53 @@ if __name__ == "__main__":
 
     # -------------------------------------------------------------------------
 
-    orderBookTrackingSql = \
-        '''
-        SELECT * FROM ORDER_BOOK_TRACKING
-        '''
+    while True:
 
-    orderBookTracking = gate.read_sql(orderBookTrackingSql, db.connect['TRADE_PROD'])
+        orderBookTrackingSql = \
+            '''
+            SELECT * FROM ORDER_BOOK_TRACKING
+            '''
 
-    # -------------------------------------------------------------------------
+        orderBookTracking = gate.read_sql(orderBookTrackingSql, db.connect['TRADE_PROD'])
 
-    if len(orderBookTracking) > float(2000000):
+        # ---------------------------------------------------------------------
 
-        sys.exit()
+        if len(orderBookTracking) > float(2000000):
 
-    else:
+            sys.exit()
 
-        snapShotDatetime = dt.datetime.now().strftime('%Y%m%d_%H%M%S')
+        else:
 
-        print(snapShotDatetime + ' : UPDATE')
+            snapShotDatetime = dt.datetime.now().strftime('%Y%m%d_%H%M%S')
 
-        pair = 'XDGUSD'
+            print(snapShotDatetime + ' : UPDATE')
 
-        K.getOrderBook(pair, depth = 10)
+            pair = 'XDGUSD'
 
-        orderBook = K.orderBook
+            K.getOrderBook(pair, depth = 10)
 
-        orderBook[pair].keys()
+            orderBook = K.orderBook
 
-        for direction in orderBook[pair].keys():
+            orderBook[pair].keys()
 
-            orders = orderBook[pair][direction]
+            for direction in orderBook[pair].keys():
 
-            for ix, entry in enumerate(orders):
+                orders = orderBook[pair][direction]
 
-                price  = entry[0]
-                volume = entry[1]
+                for ix, entry in enumerate(orders):
 
-                db.insert('TRADE_PROD',
-                          'ORDER_BOOK_TRACKING',
-                          {'PAIR'      : pair,
-                           'DIRECTION' : direction ,
-                           'DEPTH'     : ix,
-                           'PRICE'     : price,
-                           'VOLUME'    : volume})
+                    price  = entry[0]
+                    volume = entry[1]
 
-        time.sleep(5 * 60)
+                    db.insert('TRADE_PROD',
+                              'ORDER_BOOK_TRACKING',
+                              {'PAIR'      : pair,
+                               'DIRECTION' : direction ,
+                               'DEPTH'     : ix,
+                               'PRICE'     : price,
+                               'VOLUME'    : volume})
+
+            time.sleep(5 * 60)
 
 ###############################################################################
 
